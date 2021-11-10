@@ -20,6 +20,8 @@ public class ParkingLotSystem {
      * @return true if the vehicle is parked
      */
     public boolean park(Object vehicle) {
+        if (this.vehicle != null)
+            return false;
         this.vehicle = vehicle;
         return true;
     }
