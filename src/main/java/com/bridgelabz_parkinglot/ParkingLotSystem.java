@@ -15,9 +15,9 @@ public class ParkingLotSystem {
     }
 
     /**
-     * Check the vehicle is parked
+     * Check the vehicle is parked or not and throws an exception while the ParkingLot is full
      * @param vehicle is used to check whether vehicle is parked
-     * @return true if the vehicle is parked
+     * @return an exception message of ParkingLot is full or Park the vehicle
      */
     public void park(Object vehicle) throws ParkingLotException{
         if (this.vehicle != null)
@@ -26,6 +26,11 @@ public class ParkingLotSystem {
         //return true;
     }
 
+    /**
+     * Check whether the ParkingLot is empty or not and unPark the vehicle which is already parked
+     * @param vehicle is used to check whether ParkingLot is empty or to unPark the vehicle
+     * @return false if ParkingLot is empty or true when unPark the parked vehicle
+     */
     public boolean unPark(Object vehicle) {
         if (vehicle == null) return false;
         if(this.vehicle.equals(vehicle)){
@@ -35,6 +40,11 @@ public class ParkingLotSystem {
         return false;
     }
 
+    /**
+     * Check to ask whether the corresponding vehicle is parked or not in the ParkingLot
+     * @param vehicle is used to check whether the vehicle is parked or not
+     * @return true is parked otherwise false
+     */
     public boolean isVehicleParked(Object vehicle) {
         if (this.vehicle.equals(vehicle))
             return true;
