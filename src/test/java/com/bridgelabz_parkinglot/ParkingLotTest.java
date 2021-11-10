@@ -13,7 +13,7 @@ class ParkingLotTest {
     @BeforeEach
     public void setUp() throws Exception {
         vehicle = new Object();
-        parkingLotSystem = new ParkingLotSystem();
+        parkingLotSystem = new ParkingLotSystem(1);
     }
 
     @Test

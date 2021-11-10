@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz_parkinglot.ParkingLotTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-10T15:13:14" hostname="DESKTOP-U9VT6NQ" time="0.327">
+<testsuite name="com.bridgelabz_parkinglot.ParkingLotTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-10T16:13:17" hostname="DESKTOP-U9VT6NQ" time="0.582">
   <properties/>
-  <testcase name="givenAVehicle_WhenAlreadyParked_ShouldReturnFalse()" classname="com.bridgelabz_parkinglot.ParkingLotTest" time="0.327"/>
+  <testcase name="givenWhenParkingLotIsFull_ShouldInformTheOwner()" classname="com.bridgelabz_parkinglot.ParkingLotTest" time="0.582"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[com.bridgelabz_parkinglot.ParkingLotException: Parking Lot is full.
-	at com.bridgelabz_parkinglot.ParkingLotSystem.park(ParkingLotSystem.java:24)
-	at com.bridgelabz_parkinglot.ParkingLotTest.givenAVehicle_WhenAlreadyParked_ShouldReturnFalse(ParkingLotTest.java:34)
+  <system-err><![CDATA[com.bridgelabz_parkinglot.ParkingLotException: ParkingLot is full.
+	at com.bridgelabz_parkinglot.ParkingLotSystem.park(ParkingLotSystem.java:30)
+	at com.bridgelabz_parkinglot.ParkingLotTest.givenWhenParkingLotIsFull_ShouldInformTheOwner(ParkingLotTest.java:58)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
