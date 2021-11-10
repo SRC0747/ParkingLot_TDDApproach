@@ -10,7 +10,7 @@ package com.bridgelabz_parkinglot;
 
 public class ParkingLotSystem {
     private int currentCapacity;
-    private final int actualCapacity;
+    private int actualCapacity;
     private Object vehicle;
     private ParkingLotOwner owner;
 
@@ -64,5 +64,9 @@ public class ParkingLotSystem {
      */
     public void registerOwner(ParkingLotOwner owner) {
         this.owner = owner;
+    }
+
+    public void setCapacity(int capacity) {
+        this.actualCapacity = capacity;
     }
 }

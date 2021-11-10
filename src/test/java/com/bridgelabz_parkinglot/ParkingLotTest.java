@@ -72,7 +72,7 @@ class ParkingLotTest {
             parkingLotSystem.park(vehicle2);
             boolean isParked1 = parkingLotSystem.isVehicleParked(vehicle);
             boolean isParked2 = parkingLotSystem.isVehicleParked(vehicle2);
-            Assertions.assertTrue(isParked1 && isParked2);
+            Assertions.assertFalse(isParked1 && isParked2);
         } catch (ParkingLotException e) {
             e.printStackTrace();
         }
