@@ -80,8 +80,6 @@ class ParkingLotTest {
 
     @Test
     public void givenWhenParkingLotIsFull_ShouldInformTheAirportSecurity() {
-        ParkingLotOwner owner = new ParkingLotOwner();
-        parkingLotSystem.registerParkingLotObserver(owner);
         AirportSecurity airportSecurity = new AirportSecurity();
         parkingLotSystem.registerParkingLotObserver(airportSecurity);
         try {

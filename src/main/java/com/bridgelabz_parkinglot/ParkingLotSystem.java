@@ -1,5 +1,7 @@
 package com.bridgelabz_parkinglot;
 
+import java.util.ArrayList;
+
 /**
  * Check whether the vehicle can be parked in the Parking Lot
  *
@@ -9,13 +11,17 @@ package com.bridgelabz_parkinglot;
  */
 
 public class ParkingLotSystem {
-    private int currentCapacity;
     private int actualCapacity;
-    private Object vehicle;
+    //private  int currentCapacity;
+    private ArrayList vehicles;
+    private ArrayList<ParkingLotObserver> observers;
     private ParkingLotOwner owner;
+    //private AirportSecurity security;
 
     public ParkingLotSystem(int actualCapacity) {
-        this.currentCapacity = 0;
+        this.observers = new ArrayList<>();
+        this.vehicles = new ArrayList<>();
+        //this.currentCapacity = 0;
         this.actualCapacity = actualCapacity;
     }
 
@@ -25,12 +31,19 @@ public class ParkingLotSystem {
      * @return an exception message of ParkingLot is full or Park the vehicle
      */
     public void park(Object vehicle) throws ParkingLotException{
-        if (this.currentCapacity == this.actualCapacity) {
-            owner.capacityIsFull();
+        if (this.vehicles.size() == this.actualCapacity) {
+            for (ParkingLotObserver observer:observers) {
+                observer.capacityIsFull();
+            }
+            //owner.capacityIsFull();
+            /*Showing sign of full to Airport Security.*/
+            // security.capacityIsFull();
             throw new ParkingLotException("ParkingLot is full.");
         }
-        this.currentCapacity++;
-        this.vehicle = vehicle;
+        //this.currentCapacity++;
+        if(isVehicleParked(vehicle))
+            throw new ParkingLotException("Vehicle already parked.");
+        this.vehicles.add(vehicle);
     }
 
     /**
@@ -40,8 +53,9 @@ public class ParkingLotSystem {
      */
     public boolean unPark(Object vehicle) {
         if (vehicle == null) return false;
-        if(this.vehicle.equals(vehicle)){
-            this.vehicle = null;
+        if(this.vehicles.equals(vehicle)){
+            //this.vehicle = null;
+            this.vehicles.remove(vehicle);
             return true;
         }
         return false;
@@ -53,7 +67,7 @@ public class ParkingLotSystem {
      * @return true is parked otherwise false
      */
     public boolean isVehicleParked(Object vehicle) {
-        if (this.vehicle.equals(vehicle))
+        if (this.vehicles.equals(vehicle))
             return true;
         return false;
     }
@@ -68,5 +82,9 @@ public class ParkingLotSystem {
 
     public void setCapacity(int capacity) {
         this.actualCapacity = capacity;
+    }
+
+    public void registerParkingLotObserver(ParkingLotObserver observer) {
+        this.observers.add(observer);
     }
 }
