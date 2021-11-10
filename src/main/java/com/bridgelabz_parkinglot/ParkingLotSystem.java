@@ -58,6 +58,10 @@ public class ParkingLotSystem {
         return false;
     }
 
+    /**
+     * Register the ParkingLot Owner who used to ask a query to ParkingLot for checking whether it is full or not
+     * @param owner defines the ParkingLot owner
+     */
     public void registerOwner(ParkingLotOwner owner) {
         this.owner = owner;
     }
